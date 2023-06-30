@@ -40,7 +40,7 @@ export default function List(props) {
       </div>
     ));
   } else {
-    items = <div className="text-center font-light">No new tasks</div>;
+    items = <div className="text-center font-light">No task added</div>;
   }
 
   return <div className="w-full">{items}</div>;
