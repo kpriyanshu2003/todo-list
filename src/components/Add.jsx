@@ -1,17 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Add(props) {
   const [task, setTask] = useState("");
   const addTask = () => {
-    if (task.length > 0) {
-      const initData = JSON.parse(localStorage.getItem("todo"));
-      const id = new Date().getTime();
-      const data = { id: id, title: task };
-      initData.push(data);
-      localStorage.setItem("todo", JSON.stringify(initData));
-      setTask("");
-      props.updatePending(initData.length);
-    } else alert("Enter something");
+    if (task.length > 0) props.updateAdd(task);
+    else alert("Enter something");
+    setTask("");
   };
 
   return (
